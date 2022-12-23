@@ -16,17 +16,19 @@ const Todo = (props) => {
         <li data-todos-index={props.todo._id}>
             <div>
                <span className="todo-item">{props.todo.body}</span> 
-               <span className="edit" onClick={toggleBodyForm}>Edit To Do</span>
-            </div>
+               
+               <button className="edit" onClick={toggleBodyForm}>Edit To Do</button>
         
-        <button 
-            className="remove"
-            onClick={deleteClickedTodo}>
-            {" "} Done!
-        </button>
+                <button 
+                    className="remove"
+                    onClick={deleteClickedTodo}>
+                    {" "} Done!
+                </button>
+
+            </div>
         <TodoForm
         todo={props.todo}
-        style={props.formStyle}
+        style={formStyle}
         //style={state.formStyle}
         autoFocus={true}
         buttonName="Update To Do!"

@@ -33,16 +33,16 @@ const TodosContainer = () => {
       setTodos(filteredTodos)
     })
   }
-  const updateTodo = todo => {
-    const isUpdatedTodo = t => {
+  const updateTodo = (todo) => {
+    const isUpdatedTodo = (t) => {
       return t._id === todo._id
     }
     TodoModel.update(todo).then((res) => {
-      let updatedTodos = todos.slice()
-      todos.find(isUpdatedTodo).body = todo.bodysetTodos(updatedTodos)
+      let updatedTodos = todos.slice();
+      todos.find(isUpdatedTodo).body = todo.body;
+      setTodos(updatedTodos)
     })
   }
-//why is the syntax for the updateTodo different than create and delete?
 
     return (
       <div className="todosComponent">
