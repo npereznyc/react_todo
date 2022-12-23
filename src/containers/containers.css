@@ -1,0 +1,54 @@
+.container {
+    width: 60%;
+    max-width: 600px;
+    min-width: 500px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  }
+  
+  h1 {
+      font-family: 'Rokkitt', sans-serif;
+      text-align: center;
+      font-weight: 400;
+      margin: 0;
+  }
+  
+  .btn {
+      border: none;
+      border-radius: 2px;
+      outline: none;
+      padding: 1.018em 1.2em;
+      color: #fff;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      font-size: 0.8em;
+      text-align: center;
+    background-color: #444;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #303030;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .remove, .edit {
+    float: right;
+    cursor: pointer;
+  }
+  
+  .edit {
+    margin-left: 2em;
+  }
+  
+  .todo-item {
+    display: inline-block;
+    max-width: 400px;
+  }
+  
