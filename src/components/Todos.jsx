@@ -2,15 +2,14 @@ import React from "react";
 import Todo from "./Todo";
 
 const Todos = (props) => {
-        let todos = props.todos.map((todo)=> {
-        return (
-            <Todo 
+        let todos = props.todos.map((todo)=> (
+           <Todo 
             key={todo._id}
             todo={todo}
             updateTodo = {props.updateTodo}
-            deleteTodo={props.deleteTodo} />
-        )
-    })
+            deleteTodo={props.deleteTodo} /> 
+        ))
+
     return (
         <ul>
             {todos}

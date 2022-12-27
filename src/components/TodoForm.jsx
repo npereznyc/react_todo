@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 const TodoForm = (props)=> {
-    const[todo, setTodo]=useState("")
+    const[todo, setTodo]=useState(props.todo.body)
 
     const onChange=(e)=> {
         setTodo(e.target.value)
@@ -9,7 +9,7 @@ const TodoForm = (props)=> {
 
     const onSubmit=(e)=>{
         e.preventDefault()
-        const updateTodo = {body: todo}
+        const updateTodo = {...props.todo, body: todo}
         props.updateTodo(updateTodo)
         setTodo("")
         props.toggleBodyForm()
@@ -21,7 +21,7 @@ const TodoForm = (props)=> {
                 <input onChange={onChange}
                 type="text" id="newItemDescription" placeholder="What do you need to do?"
                 value={todo} />
-                <button type= "sumbit" id="addTask" className="button">Update To Do</button>
+                <button type= "sumbit" id="addTask" className="button">{props.buttonName}</button>
             </form>
         </div>
     )

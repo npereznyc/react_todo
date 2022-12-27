@@ -7,12 +7,9 @@ const TodosContainer = () => {
   const [todos, setTodos] = useState([])
 
   useEffect(()=> {
-    TodoModel.all().then((res)=> {
-      console.log(res)
-      setTodos(res.data)
-    })
-  // },[])
-  },[todos.length])
+    TodoModel.all().then((res)=> setTodos(res.data))
+    .catch((err) => console.error);
+    }, [todos.length])
 
   const createTodo = (todo) => {
     let newTodo = {
@@ -39,7 +36,7 @@ const TodosContainer = () => {
     }
     TodoModel.update(todo).then((res) => {
       let updatedTodos = todos.slice();
-      todos.find(isUpdatedTodo).body = todo.body;
+      updatedTodos.find(isUpdatedTodo).body = todo.body;
       setTodos(updatedTodos)
     })
   }
